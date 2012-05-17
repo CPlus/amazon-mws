@@ -71,4 +71,13 @@ class FeedTest < MiniTest::Unit::TestCase
     assert_kind_of String, fb3.render
   end
   
+  def test_stores_feed
+    msgs = [{"Store"=>[{"MarketplaceName"=>"Amazon.co.uk"}, {"StoreID"=>"Y4TG"}], "OperationType"=>"Update"}]
+    fb = Amazon::MWS::FeedBuilder.new("Store", msgs)
+    assert_instance_of FeedBuilder, fb
+    xml = fb.render
+    assert_instance_of String, xml
+    assert_equal xml, xml_for("submit_feed_stores_request", 200).body
+  end
+
 end

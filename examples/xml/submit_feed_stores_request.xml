@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AmazonEnvelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="amzn-envelope.xsd">
+  <Header>
+    <DocumentVersion>1.2</DocumentVersion>
+    <MerchantIdentifier></MerchantIdentifier>
+  </Header>
+  <MessageType>Store</MessageType>
+  <Message>
+    <MessageID>1</MessageID>
+    <Store>
+      <MarketplaceName>Amazon.co.uk</MarketplaceName>
+      <StoreID>Y4TG</StoreID>
+    </Store>
+    <OperationType>Update</OperationType>
+  </Message>
+</AmazonEnvelope>

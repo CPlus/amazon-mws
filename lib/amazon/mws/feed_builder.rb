@@ -21,6 +21,7 @@ module Amazon
           
           envelope_params = { :message_type => @message_type }
           envelope_params.merge!({:purge => @params[:purge]}) if Feed::Enumerations::PRODUCT_MESSAGE_TYPES.include?(@message_type) && @params[:purge]==true
+          envelope_params.merge!({:marketplace_name => @params[:marketplace_name]}) if !@params[:marketplace_name].blank?
           render_envelope(envelope_params)
           
           if !@messages.nil?
@@ -34,7 +35,7 @@ module Amazon
 
       def render_header
         @xml.Header do
-          @xml.DocumentVersion "1.01"
+          @xml.DocumentVersion "1.2"
           @xml.MerchantIdentifier @merchant_id
         end
       end
@@ -42,7 +43,8 @@ module Amazon
       def render_envelope(params = {})
         #@xml.EffectiveDate Time.now
         @xml.MessageType(params[:message_type].to_s)
-        @xml.PurgeAndReplace(params[:purge] || false)
+        # @xml.PurgeAndReplace(params[:purge] || false)
+        @xml.MarketplaceName(params[:marketplace_name]) if !params[:marketplace_name].blank?
       end
 
       def render_message(message, params = {})
