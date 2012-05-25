@@ -10,6 +10,7 @@ module Amazon
 
       def initialize(options ={})
         @merchant_id = options['merchant_id']
+        @token = options['token']
         raise "Must supply merchant_id" unless @merchant_id
         @connection = Amazon::MWS::Connection.connect(options)
       end

@@ -26,7 +26,7 @@ module Amazon
         raise InvalidMessageType if !MESSAGE_TYPES.include?(message_type)
         raise "Missing merchant_id" unless @merchant_id
         
-        body = Amazon::MWS::FeedBuilder.new(message_type, messages, params.merge({:merchant_id => @merchant_id})).render
+        body = Amazon::MWS::FeedBuilder.new(message_type, messages, params.merge({:merchant_id => @merchant_id, :token => @token})).render
         puts body if Amazon::MWS::Base.debug
         
         response =

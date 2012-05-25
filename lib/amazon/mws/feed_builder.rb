@@ -11,6 +11,7 @@ module Amazon
         @message_type = message_type
         @messages = messages
         @params = params
+        @token = params[:token]
         @merchant_id = params[:merchant_id]
       end
 
@@ -40,7 +41,7 @@ module Amazon
       def render_header
         @xml.Header do
           @xml.DocumentVersion "1.2"
-          @xml.MerchantIdentifier @merchant_id
+          @xml.MerchantIdentifier @token
         end
       end
 
