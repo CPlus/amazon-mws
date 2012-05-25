@@ -26,8 +26,12 @@ module Amazon
           
           if !@messages.nil?
             @messages.flatten.each_with_index do |message,i|
-              message = {'MessageID'=>i+1}.merge(message) if message[:MessageID].nil?
-              render_message(message, @params)
+              ordered_message = ActiveSupport::OrderedHash.new
+              if message[:MessageID].nil?
+                ordered_message["MessageID"] = i + 1
+              end
+              ordered_message.merge!(message)
+              render_message(ordered_message, @params)
             end
           end
         end
