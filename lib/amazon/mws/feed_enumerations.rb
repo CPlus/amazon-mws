@@ -16,7 +16,7 @@ module Amazon
         :order_acknowledgement     => '_POST_ORDER_ACKNOWLEDGEMENT_DATA_',
         :order_fulfillment         => '_POST_ORDER_FULFILLMENT_DATA_',
         :payment_adjustment        => '_POST_PAYMENT_ADJUSTMENT_DATA_',
-        :store                     => '158', #this is not documented in the public API
+        :store                     => '_POST_STOREINFO_DATA_', #this is not documented in the public API
         # :flat_file_listings              => '_POST_FLAT_FILE_LISTINGS_DATA_',
         # :flat_file_order_acknowledgement => '_POST_FLAT_FILE_ORDER_ACKNOWLEDGEMENT_DATA_',
         # :flat_file_fulfillment_data      => '_POST_FLAT_FILE_FULFILLMENT_DATA_',
