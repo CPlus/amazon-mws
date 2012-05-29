@@ -168,5 +168,12 @@ class ResponseTest < MiniTest::Unit::TestCase
     assert(response.reports)
   end
 
+  def test_error_response
+    response = ResponseError.format(xml_for('error',200))
+
+    assert_equal("AccessDenied", response.code)
+    assert_equal('75a808dd-72c6-4af4-b4ba-4b00f3153940', response.request_id)
+  end
+
 end
 

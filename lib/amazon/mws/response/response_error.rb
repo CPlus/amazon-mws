@@ -8,7 +8,7 @@ module Amazon
       xml_reader :code, :in => "Error"
       xml_reader :message, :in => "Error"
       xml_reader :detail, :in => "Error"
-      xml_reader :request_id
+      xml_reader :request_id, :from => "RequestID"
     end
 
   end
