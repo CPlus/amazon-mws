@@ -12,7 +12,7 @@ require 'minitest/autorun'
 require 'pathname'
 require 'yaml'
 #require 'fakeweb'
-require 'mocha'
+require 'mocha/mini_test'
 
 require File.join(File.dirname(__FILE__), '..', 'lib', 'amazon', 'mws')
 
