@@ -11,7 +11,7 @@ module Amazon
         @message_type = message_type
         @messages = messages
         @params = params
-        @token = params[:token]
+        @token = params[:token] || ''
         @merchant_id = params[:merchant_id]
       end
 
