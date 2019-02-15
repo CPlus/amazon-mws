@@ -5,7 +5,7 @@ gemspec
 
 group :test do
   gem 'minitest'
-  gem 'mocha'
+  gem 'mocha', '>= 1.4.0'
 
   platform :ruby_19 do
     gem 'simplecov'

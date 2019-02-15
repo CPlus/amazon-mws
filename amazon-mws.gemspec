@@ -3,7 +3,7 @@ $:.push File.expand_path("../lib", __FILE__)
 
 Gem::Specification.new do |s|
   s.name = %q{amazon-mws}
-  s.version = "0.1.1.2"
+  s.version = "0.1.1.3"
 
   s.authors     = ["David Michael", "A. Edward Wible", "Alex Stubbs"]
   s.email       = ["david.michael@sonymusic.com", "aewible@gmail.com", "alex@alex-s.co.uk"]
@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.add_dependency "ruby-hmac", "~> 0.4.0"
-  s.add_dependency "roxml", "~> 3.3.1"
+  s.add_dependency "roxml", "~> 4.0.0"
   s.add_dependency "xml-simple", "~> 1.1.1"
   s.add_dependency "builder", ">= 3.0.0"
 end
